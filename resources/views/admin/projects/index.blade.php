@@ -16,6 +16,7 @@
             <thead>
                 <tr>
                     <th scope="col">Nome</th>
+                    <th scope="col">Categoria</th>
                     <th scope="col">Data</th>
                     <th scope="col">ultimo aggiornamento</th>
                     <th scope="col"></th>
@@ -25,6 +26,13 @@
                 @forelse ($projects as $project)
                     <tr>
                         <td>{{ $project->title }}</td>
+                        <td>
+                            @if ($project->type)
+                                <span class="badge" style="{{ $project->type->color }}">{{ $project->type->label }}</span>
+                            @else
+                                -
+                            @endif
+                        </td>
                         <td>{{ $project->date }}</td>
                         <td>{{ $project->last_update }}</td>
                         <td class="d-flex justify-content-end">

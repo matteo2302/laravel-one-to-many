@@ -34,12 +34,29 @@
                         <input class="form-control" type="file" id="image" name="image"
                             placeholder="aggiungi il file dell'immagine">
                     </div>
-                    <div class="col-8">
-                        <div class="mb-3">
-                            <label for="descrizione" class="form-label">descrizione</label>
-                            <textarea class="form-control" id="description" name="description" rows="6"></textarea>
+                    <div class="row">
+                        <div class="col-8">
+                            <div class="mb-3">
+                                <label for="descrizione" class="form-label">Descrizione</label>
+                                <textarea class="form-control" id="description" name="description" rows="6"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="mb-3">
+                                <label for="type" class="form-label">tipo</label>
+                                <select class="form-select" id="type" name="type_id">
+                                    <option value="">Nessuna</option>
+                                    @foreach ($types as $type)
+                                        <option value="{{ $type->id }}">{{ $type->label }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
                         </div>
                     </div>
+
+
+
+
                 </div>
             </div>
             <div class="d-flex justify-content-end my-4">

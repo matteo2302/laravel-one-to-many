@@ -5,6 +5,7 @@
             <img src="{{ $project->image }}" alt="{{ $project->title }}">
             <div>
                 <h1 class="my-5">{{ $project->title }}</h1>
+                <h1 class="my-5">tipo: {{ $project->type ? $project->type->label : 'Nessuna' }}</h1>
                 <h4 class="mb-5">Fatto il: {{ $project->date }}</h4>
                 <h4 class="mb-5">Ultima revisione: {{ $project->last_update }}</h4>
                 <p class="mb-5">Descrizione e Obbiettivi :

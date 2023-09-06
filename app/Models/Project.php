@@ -22,4 +22,8 @@ class Project extends Model
     {
         return asset('storage/' . $value);
     }
+    public function type()
+    {
+        return $this->belongsto(Type::class);
+    }
 };
