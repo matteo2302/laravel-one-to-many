@@ -19,8 +19,8 @@ class ProjectSeeder extends Seeder
         $types_ids = Type::pluck('id')->toArray();
         for ($i = 0; $i < 10; $i++) {
             $project = new Project();
-            $project->title = Arr::random($types_ids);
-            $project->type_id = 1;
+            $project->title = $faker->name();
+            $project->type_id =  Arr::random($types_ids);
             $project->date = $faker->dateTime();
             $project->last_update = $faker->dateTime();
             $project->description = implode(' ', $faker->paragraphs());

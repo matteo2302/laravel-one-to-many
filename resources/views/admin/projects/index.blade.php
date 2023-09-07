@@ -8,7 +8,6 @@
             <div class="d-flex justify-content-end">
                 <a class="btn btn-primary" href="{{ route('admin.projects.index') }}">Torna indietro</a>
                 <a class="btn btn-warning" href="{{ route('admin.projects.create') }}">Aggiungi progetto</a>
-
             </div>
         </header>
 
@@ -28,7 +27,8 @@
                         <td>{{ $project->title }}</td>
                         <td>
                             @if ($project->type)
-                                <span class="badge" style="{{ $project->type->color }}">{{ $project->type->label }}</span>
+                                <span class="badge"
+                                    style="background-color:{{ $project->type->color }}">{{ $project->type->label }}</span>
                             @else
                                 -
                             @endif
@@ -49,7 +49,6 @@
                                 <button class="btn btn-sm btn-danger">
                                     <i class="fas fa-trash"></i>
                                 </button>
-
                             </form>
                         </td>
                     </tr>
